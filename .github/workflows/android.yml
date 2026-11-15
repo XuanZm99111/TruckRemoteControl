@@ -29,11 +29,11 @@ jobs:
 
       - name: Build and check
         run: ./gradlew --continue ktlintCheck detekt assembleDebug lintDebug testDebugUnitTest
-          - name: Upload APK
-    uses: actions/upload-artifact@v4
-    with:
-      name: TruckRemote-debug-apk
-      path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+            name: TruckRemote-debug-apk
+            path: app/build/outputs/apk/debug/app-debug.apk
 
       - name: Upload reports
         if: always()
